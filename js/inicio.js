@@ -4,24 +4,21 @@ var apellidos = document.getElementById("apellidos");
 var rut = document.getElementById("rut");
 var correo = document.getElementById("correo");
 var movil = document.getElementById("movil");
-var python = document.getElementById("python");
-var java = document.getElementById("java");
-var ts = document.getElementById("ts");
-var php = document.getElementById("php");
-var c = document.getElementById("c");
-var cmasmas = document.getElementById("cpp");
-var id1 = document.getElementById("boton1");
-var id2 = document.getElementById("boton2");
-var id3 = document.getElementById("boton3");
-var id4 = document.getElementById("boton4");
-var id5 = document.getElementById("boton5");
+var python = document.getElementById("a");
+var java = document.getElementById("b");
+var ts = document.getElementById("c");
+var php = document.getElementById("d");
+var c = document.getElementById("e");
+var cmasmas = document.getElementById("f");
 var texto = document.getElementById("texto");
+var continuar = document.getElementById("continuar");
 nombre.setAttribute("required", "");
 apellidos.setAttribute("required", "");
 rut.setAttribute("required", "");
 correo.setAttribute("required", "");
 movil.setAttribute("required", "");
 texto.setAttribute("required", "");
+continuar.setAttribute("required", "");
 function validarText(texto) {
     var valor = texto.value;
     if (valor.length > 300) {
@@ -33,20 +30,38 @@ function validarText(texto) {
     }
     return true;
 }
+function validarContinuar() {
+    if ((continuar.checked) && (continuar.value != null)) {
+        return true;
+    }
+}
+function validarChecks() {
+    if ((python.checked) && (python.value != null)) {
+        return true;
+    }
+    if ((java.checked) && (java.value != null)) {
+        return true;
+    }
+    if ((ts.checked) && (ts.value != null)) {
+        return true;
+    }
+    if ((php.checked) && (php.value != null)) {
+        return true;
+    }
+    if ((c.checked) && (c.value != null)) {
+        return true;
+    }
+    if ((cmasmas.checked) && (cmasmas.value != null)) {
+        return true;
+    }
+}
 function validarNum(num) {
     var valor = num.value;
-    if (valor.length <= 8) {
+    if (valor.length <= 8 || !valor.match(/^[0-9]+$/)) {
         return false;
     }
     else {
         return true;
-    }
-}
-function validar(num) {
-    var valor = num.value;
-    if (isNaN(valor)) {
-        num.setCustomValidity("no es numero");
-        return false;
     }
 }
 function validarRut(rut) {
@@ -82,8 +97,7 @@ function validarRut(rut) {
 }
 var formulario = document.getElementById("formulario");
 formulario.addEventListener("submit", function (event) {
-    if ((movil.value && nombre.value && texto.value && rut.value && apellidos.value && correo.value != null) && (validarRut(rut) != false) && (validarNum(movil) != false) && (validarText(texto))) {
-        alert("el formulario se a enviado con exito");
+    if ((movil.value && nombre.value && texto.value && rut.value && apellidos.value && correo.value != null) && (validarRut(rut) != false) && (validarNum(movil) != false) && (validarText(texto) && (validarChecks() || (validarContinuar())))) {
         formulario.style.display = "none";
         document.write("hemos recibido sus datos, pronto nos estaremos comunicando con usted");
         event === null || event === void 0 ? void 0 : event.preventDefault();

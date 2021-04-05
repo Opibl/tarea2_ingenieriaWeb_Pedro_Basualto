@@ -3,18 +3,14 @@ let apellidos:any = document.getElementById("apellidos");
 let rut:any = document.getElementById("rut"); 
 let correo:any = document.getElementById("correo"); 
 let movil:any = document.getElementById("movil"); 
-let python:any = document.getElementById("python"); 
-let java:any = document.getElementById("java");
-let ts:any = document.getElementById("ts") ;
-let php:any = document.getElementById("php") ;
-let c:any = document.getElementById("c") ;
-let cmasmas:any = document.getElementById("cpp");
-let id1:any = document.getElementById("boton1");
-let id2:any = document.getElementById("boton2");
-let id3:any = document.getElementById("boton3");
-let id4:any = document.getElementById("boton4");
-let id5:any = document.getElementById("boton5");
-let texto:any = document.getElementById("texto");
+let python:any = document.getElementById("a"); 
+let java:any = document.getElementById("b");
+let ts:any = document.getElementById("c") ;
+let php:any = document.getElementById("d") ;
+let c:any = document.getElementById("e") ;
+let cmasmas:any = document.getElementById("f");
+let texto = document.getElementById("texto") as HTMLInputElement;
+let continuar = document.getElementById("continuar") as HTMLInputElement;
 
 nombre.setAttribute("required", "");
 apellidos.setAttribute("required", "");
@@ -22,6 +18,9 @@ rut.setAttribute("required", "");
 correo.setAttribute("required", "");
 movil.setAttribute("required", "");
 texto.setAttribute("required", "");
+continuar.setAttribute("required", "");
+
+
 
 function validarText(texto:HTMLInputElement){
     let valor = texto.value;
@@ -36,6 +35,35 @@ function validarText(texto:HTMLInputElement){
     }
     
     return true;
+}
+
+function validarContinuar(){
+    if((continuar.checked)&&(continuar.value != null)){
+        return true;
+    }
+}
+
+function validarChecks(){
+
+    if((python.checked)&&(python.value != null)){
+        return true;
+    }
+    if((java.checked)&&(java.value != null)){
+        return true;
+    }
+    if((ts.checked)&&(ts.value != null)){
+        return true;
+    }
+    if((php.checked)&&(php.value != null)){
+        return true;
+    }
+    if((c.checked)&&(c.value != null)){
+        return true;
+    }
+    if((cmasmas.checked)&&(cmasmas.value != null)){
+        return true;
+    }
+
 }
 
 function validarNum(num:HTMLInputElement): boolean {
@@ -104,13 +132,14 @@ function validarRut(rut:HTMLInputElement) {
 
 let formulario = document.getElementById("formulario") as HTMLFormElement;
 formulario.addEventListener("submit",function(event){
+    
+    if((movil.value && nombre.value && texto.value && rut.value && apellidos.value && correo.value != null) && (validarRut(rut) != false)&&(validarNum(movil)!=false)&&(validarText(texto)&&(validarChecks()||(validarContinuar())))) {
 
-    if((movil.value && nombre.value && texto.value && rut.value && apellidos.value && correo.value != null) && (validarRut(rut) != false)&&(validarNum(movil)!=false)&&(validarText(texto))) {
-        alert("el formulario se a enviado con exito");
         formulario.style.display = "none";
         document.write("hemos recibido sus datos, pronto nos estaremos comunicando con usted");
         event?.preventDefault();
     }
+    
 });
 
 let limpiarDatos = document.getElementById("limpiar") as HTMLInputElement;

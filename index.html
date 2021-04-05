@@ -43,7 +43,7 @@
             <li> 
                 Selecciona 1 o más lenguajes de programación de su interés
                 <br>
-                <input type="checkbox" id="a" > Python
+                <input type="checkbox" id="a"> Python
                 <label for="Python"></label><br>
                 <input type="checkbox" id="b"> Java
                 <label for="Java"></label><br>
@@ -55,6 +55,8 @@
                 <label for="C#"></label><br>
                 <input type="checkbox" id="f"> C++
                 <label for="C++"></label><br>
+                <input type="checkbox" id="continuar" oninvalid="setCustomValidity('marcar uno es obligatorio, si ya marcaste o no quieres marcar ninguno has click para continuar')" onchange="setCustomValidity('')"> continuar 
+                <label for="continuar"></label><br>
             </li>
 
             <li>
@@ -76,10 +78,10 @@
                 <label for="5">5</label>
             </li>
             <li>
-                <textarea id="texto" name="texto"  rows="25" cols="25" placeholder="hola soy pedro basualto estudiante de ingenieria civil informatica y tengo muchos hobbies, me gusta jugar videojuegos ,dibujar entre muchas otras cosas... " oninput="validarText(this)"></textarea>
+                <textarea id="texto" name="texto"  rows="20" cols="25" placeholder="hola soy pedro basualto estudiante de ingenieria civil informatica y tengo muchos hobbies, me gusta jugar videojuegos ,dibujar entre muchas otras cosas... ahora cuenteme sobre usted porfavor" oninput="validarText(this)"></textarea>
             </li>
             <li>
-                <input type="submit" value="Enviar Datos" class="enviar">
+                <input type="submit" value="Enviar Datos" class="enviar" id="enviar">
                 <input type="button" value="Limpiar Datos" class="limpiar" id="limpiar">
             </li>
         </ul>    
