@@ -1,0 +1,53 @@
+ul{
+    text-decoration: none;
+    list-style: none;
+}
+li{
+    list-style: none;
+    padding: 0.2em;
+}
+
+form{
+    height: 50em;
+    width: 35em;
+    margin-left: 30em;
+    background-color: #A07D19;
+    margin-top: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: 'Londrina Solid', cursive;
+    
+}
+
+body{
+    background-color: #EACA6E;
+}
+
+
+form ul li .limpiar{
+    background-color: #000;
+    color: white;
+    outline: none;
+}
+
+form ul li .enviar{
+    color: white;
+    background-color: #000;
+    outline: none;
+}
+
+form ul li .limpiar:hover{
+    color: gray;
+}
+
+form ul li .enviar:hover{
+    color: gray;
+}
+
+form ul li input{
+    outline: none;
+}
+
+form ul li textarea{
+    outline: none;
+}

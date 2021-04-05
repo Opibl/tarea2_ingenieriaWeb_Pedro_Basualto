@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 2</title>
+    <link rel="stylesheet" type="text/css" href="CSS/estilo.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <form id="formulario">
+        <ul>
+            <li>
+                <label for="nombre">Nombre: </label>
+                <input type="text" placeholder="Nombre" name="nombre" id="nombre">
+            </li>
+
+            <li>
+                <label for="apellidos">Apellidos: </label>
+                <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos">
+            </li> 
+
+            <li>
+                <label for="rut">RUT: </label>
+                <input type="text" placeholder="11111111-1" name="rut" id="rut" oninput="validarRut(this)" maxlength="10">
+            </li>    
+            
+            <li>
+            <label for="correo">Correo Electrónico: </label>
+                <input type="email" placeholder="Correo Electrónico" name="correo" id="correo">
+            </li>   
+            
+            <li>
+                <label for="movil">Teléfono Móvil: </label>
+                <input type="tel" placeholder="Numero telefonico" name="movil" id="movil" pattern="[0-9]{9}" maxlength="9" oninput="validarNum(this)">
+            </li>
+            
+            <li> 
+                Selecciona 1 o más lenguajes de programación de su interés
+                <br>
+                <input type="checkbox" id="a" > Python
+                <label for="Python"></label><br>
+                <input type="checkbox" id="b"> Java
+                <label for="Java"></label><br>
+                <input type="checkbox" id="c" > TypeScript
+                <label for="TypeScript"></label><br>
+                <input type="checkbox" id="d"> PHP
+                <label for="PHP"></label><br>
+                <input type="checkbox" id="e"> C#
+                <label for="C#"></label><br>
+                <input type="checkbox" id="f"> C++
+                <label for="C++"></label><br>
+            </li>
+
+            <li>
+                Cuál es su nivel de conocimiento en programacion?: <input type="range" name="" id="conocimiento-program" >
+            </li>
+
+            
+            <li>Cuantos años de experiencia laboral tiene?:
+                <br>
+                <input type="radio" id="1" name="nivel" value="1" id = "boton1" required>
+                <label for="1">1</label>
+                <input type="radio" id="2" name="nivel" value="2" id = "boton2" required>
+                <label for="2">2</label>
+                <input type="radio" id="3" name="nivel" value="3" id = "boton3" required>
+                <label for="3">3</label>
+                <input type="radio" id="4" name="nivel" value="4" id = "boton4" required> 
+                <label for="4">4</label>
+                <input type="radio" id="5" name="nivel" value="5" id = "boton5" required>
+                <label for="5">5</label>
+            </li>
+            <li>
+                <textarea id="texto" name="texto"  rows="25" cols="25" placeholder="hola soy pedro basualto estudiante de ingenieria civil informatica y tengo muchos hobbies, me gusta jugar videojuegos ,dibujar entre muchas otras cosas... " oninput="validarText(this)"></textarea>
+            </li>
+            <li>
+                <input type="submit" value="Enviar Datos" class="enviar">
+                <input type="button" value="Limpiar Datos" class="limpiar" id="limpiar">
+            </li>
+        </ul>    
+    </form>
+    <script src="js/inicio.js" async defer></script>
+</body>
+
+</html>
