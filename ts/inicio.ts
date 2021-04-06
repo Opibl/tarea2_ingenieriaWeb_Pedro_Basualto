@@ -12,6 +12,8 @@ let cmasmas:any = document.getElementById("f");
 let texto = document.getElementById("texto") as HTMLInputElement;
 let continuar = document.getElementById("continuar") as HTMLInputElement;
 
+
+
 nombre.setAttribute("required", "");
 apellidos.setAttribute("required", "");
 rut.setAttribute("required", "");
@@ -21,6 +23,22 @@ texto.setAttribute("required", "");
 continuar.setAttribute("required", "");
 
 
+
+
+let hasError = false;
+
+function validarRadios(){
+    
+    if(document.querySelector('input[name="nivel"]:checked') as HTMLInputElement){
+        return true;
+    }
+    else{
+        hasError = true;
+        alert("es obligatorio marcar radio");
+        return false;
+    }
+
+}
 
 function validarText(texto:HTMLInputElement){
     let valor = texto.value;
@@ -63,7 +81,6 @@ function validarChecks(){
     if((cmasmas.checked)&&(cmasmas.value != null)){
         return true;
     }
-
 }
 
 function validarNum(num:HTMLInputElement): boolean {
@@ -133,11 +150,11 @@ function validarRut(rut:HTMLInputElement) {
 let formulario = document.getElementById("formulario") as HTMLFormElement;
 formulario.addEventListener("submit",function(event){
     
-    if((movil.value && nombre.value && texto.value && rut.value && apellidos.value && correo.value != null) && (validarRut(rut) != false)&&(validarNum(movil)!=false)&&(validarText(texto)&&(validarChecks()||(validarContinuar())))) {
+    if((movil.value && nombre.value && texto.value && rut.value && apellidos.value && correo.value != null) && (validarRut(rut) != false)&&(validarNum(movil)!=false)&&(validarText(texto)&&(validarChecks()||(validarContinuar()))&&(validarRadios()))) {
 
         formulario.style.display = "none";
         document.write("hemos recibido sus datos, pronto nos estaremos comunicando con usted");
-        event?.preventDefault();
+        if(hasError) event?.preventDefault();
     }
     
 });

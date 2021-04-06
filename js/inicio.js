@@ -19,6 +19,17 @@ correo.setAttribute("required", "");
 movil.setAttribute("required", "");
 texto.setAttribute("required", "");
 continuar.setAttribute("required", "");
+var hasError = false;
+function validarRadios() {
+    if (document.querySelector('input[name="nivel"]:checked')) {
+        return true;
+    }
+    else {
+        hasError = true;
+        alert("es obligatorio marcar radio");
+        return false;
+    }
+}
 function validarText(texto) {
     var valor = texto.value;
     if (valor.length > 300) {
@@ -97,10 +108,11 @@ function validarRut(rut) {
 }
 var formulario = document.getElementById("formulario");
 formulario.addEventListener("submit", function (event) {
-    if ((movil.value && nombre.value && texto.value && rut.value && apellidos.value && correo.value != null) && (validarRut(rut) != false) && (validarNum(movil) != false) && (validarText(texto) && (validarChecks() || (validarContinuar())))) {
+    if ((movil.value && nombre.value && texto.value && rut.value && apellidos.value && correo.value != null) && (validarRut(rut) != false) && (validarNum(movil) != false) && (validarText(texto) && (validarChecks() || (validarContinuar())) && (validarRadios()))) {
         formulario.style.display = "none";
         document.write("hemos recibido sus datos, pronto nos estaremos comunicando con usted");
-        event === null || event === void 0 ? void 0 : event.preventDefault();
+        if (hasError)
+            event === null || event === void 0 ? void 0 : event.preventDefault();
     }
 });
 var limpiarDatos = document.getElementById("limpiar");
