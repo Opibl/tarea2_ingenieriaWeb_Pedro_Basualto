@@ -3,7 +3,7 @@ var nombre = document.getElementById("nombre");
 var apellidos = document.getElementById("apellidos");
 var rut = document.getElementById("rut");
 var correo = document.getElementById("correo");
-var movil = document.getElementById("movil");
+var movil = document.getElementById("telefono");
 var python = document.getElementById("a");
 var java = document.getElementById("b");
 var ts = document.getElementById("c");
@@ -12,6 +12,12 @@ var c = document.getElementById("e");
 var cmasmas = document.getElementById("f");
 var texto = document.getElementById("texto");
 var continuar = document.getElementById("continuar");
+var boton1 = document.getElementById("boton1");
+var boton2 = document.getElementById("boton2");
+var boton3 = document.getElementById("boton3");
+var boton4 = document.getElementById("boton4");
+var boton5 = document.getElementById("boton5");
+var conoc = document.getElementById("conocimiento-program");
 nombre.setAttribute("required", "");
 apellidos.setAttribute("required", "");
 rut.setAttribute("required", "");
@@ -19,9 +25,15 @@ correo.setAttribute("required", "");
 movil.setAttribute("required", "");
 texto.setAttribute("required", "");
 continuar.setAttribute("required", "");
+boton1.setAttribute("required", "");
+boton2.setAttribute("required", "");
+boton3.setAttribute("required", "");
+boton4.setAttribute("required", "");
+boton5.setAttribute("required", "");
+conoc.setAttribute("required", "");
 var hasError = false;
 function validarRadios() {
-    if (document.querySelector('input[name="nivel"]:checked')) {
+    if (document.querySelector('input[name="lvl"]:checked')) {
         return true;
     }
     else {

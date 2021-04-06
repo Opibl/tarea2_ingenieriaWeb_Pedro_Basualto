@@ -2,7 +2,7 @@ let nombre:any = document.getElementById("nombre");
 let apellidos:any = document.getElementById("apellidos"); 
 let rut:any = document.getElementById("rut"); 
 let correo:any = document.getElementById("correo"); 
-let movil:any = document.getElementById("movil"); 
+let movil:any = document.getElementById("telefono"); 
 let python:any = document.getElementById("a"); 
 let java:any = document.getElementById("b");
 let ts:any = document.getElementById("c") ;
@@ -11,6 +11,14 @@ let c:any = document.getElementById("e") ;
 let cmasmas:any = document.getElementById("f");
 let texto = document.getElementById("texto") as HTMLInputElement;
 let continuar = document.getElementById("continuar") as HTMLInputElement;
+
+let boton1 = document.getElementById("boton1") as HTMLInputElement;
+let boton2 = document.getElementById("boton2") as HTMLInputElement;
+let boton3 = document.getElementById("boton3") as HTMLInputElement;
+let boton4 = document.getElementById("boton4") as HTMLInputElement;
+let boton5 = document.getElementById("boton5") as HTMLInputElement;
+let conoc:any = document.getElementById("conocimiento-program") ;
+
 
 
 
@@ -21,6 +29,13 @@ correo.setAttribute("required", "");
 movil.setAttribute("required", "");
 texto.setAttribute("required", "");
 continuar.setAttribute("required", "");
+boton1.setAttribute("required", "");
+boton2.setAttribute("required", "");
+boton3.setAttribute("required", "");
+boton4.setAttribute("required", "");
+boton5.setAttribute("required", "");
+conoc.setAttribute("required", "");
+
 
 
 
@@ -29,7 +44,7 @@ let hasError = false;
 
 function validarRadios(){
     
-    if(document.querySelector('input[name="nivel"]:checked') as HTMLInputElement){
+    if(document.querySelector('input[name="lvl"]:checked') as HTMLInputElement){
         return true;
     }
     else{
